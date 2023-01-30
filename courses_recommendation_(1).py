@@ -5,7 +5,7 @@ import numpy as np
 st.header("Course Recommender System")
 st.subheader("This system will recommend the five most similar courses to your course of choice.")
 
-data = pd.read_csv('/kaggle/input/edx-courses-dataset-2021/EdX.csv')  
+data = pd.read_csv('EdX.csv')  
 data['Description'] = data['Name'] + ' ' + data['About'] + ' ' + data['Course Description']
 data.drop('Link', axis = 1, inplace = True)
 
