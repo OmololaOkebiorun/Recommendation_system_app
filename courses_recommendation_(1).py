@@ -10,7 +10,7 @@ uploaded_file = st.file_uploader(
 if uploaded_file is not None:
     data = uploaded_file
 else:
-    data = pd.read_csv(r'C:\Users\MASTER\Dataset\EdX.csv')  
+    data = pd.read_csv(r'https://github.com/OmololaOkebiorun/Recommendation_system_app/blob/main/EdX.csv')  
 data['Description'] = data['Name'] + ' ' + data['About'] + ' ' + data['Course Description']
 data.drop('Link', axis = 1, inplace = True)
 
