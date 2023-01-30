@@ -6,7 +6,7 @@ st.header("Course Recommender System")
 st.subheader("This system will recommend the five most similar courses to your course of choice.")
 
 
-data = pd.read_csv(r'https://github.com/OmololaOkebiorun/Recommendation_system_app/blob/main/EdX.csv', error_bad_lines=False)  
+data = pd.read_csv('https://github.com/OmololaOkebiorun/Recommendation_system_app/blob/main/EdX.csv')  
 data['Description'] = data['Name'] + ' ' + data['About'] + ' ' + data['Course Description']
 data.drop('Link', axis = 1, inplace = True)
 
