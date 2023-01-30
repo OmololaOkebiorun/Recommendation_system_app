@@ -5,12 +5,8 @@ import numpy as np
 st.header("Course Recommender System")
 st.subheader("This system will recommend the five most similar courses to your course of choice.")
 
-uploaded_file = st.file_uploader(
-    "Choose your database", accept_multiple_files=False)
-if uploaded_file is not None:
-    data = uploaded_file
-else:
-    data = pd.read_csv(r'https://github.com/OmololaOkebiorun/Recommendation_system_app/blob/main/EdX.csv')  
+
+data = pd.read_csv(r'https://github.com/OmololaOkebiorun/Recommendation_system_app/blob/main/EdX.csv')  
 data['Description'] = data['Name'] + ' ' + data['About'] + ' ' + data['Course Description']
 data.drop('Link', axis = 1, inplace = True)
 
