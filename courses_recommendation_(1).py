@@ -10,6 +10,7 @@ data['Description'] = data['Name'] + ' ' + data['About'] + ' ' + data['Course De
 data.drop('Link', axis = 1, inplace = True)
 
 import re
+from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
@@ -31,7 +32,7 @@ def clean(text):
 data.Description = data.Description.apply(clean)
 
 def Vectorization(text):
-    from sklearn.feature_extraction.text import TfidfVectorizer
+    
     vectorizer = TfidfVectorizer()
     data_matrix = vectorizer.fit_transform(data.Description)
     return data_matrix
