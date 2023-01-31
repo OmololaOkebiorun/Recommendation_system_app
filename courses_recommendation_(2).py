@@ -21,6 +21,9 @@ lemma = WordNetLemmatizer()
 import nltk
 nltk.download('punkt')
 
+import nltk
+nltk.download('wordnet')
+
 def clean(text):
     text = re.sub("[^A-Za-z1-9 ]", "", text) #removes punctuation marks
     text = text.lower() #changes to lower case
